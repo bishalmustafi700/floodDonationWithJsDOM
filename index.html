@@ -62,15 +62,15 @@
         </nav>
         <!-- buttons -->
          <div class="flex items-center gap-7  mb-5 justify-center px-4 bg-white bg-opacity-80 py-10">
-            <a href=""><button class="btn bg-lime-300 text-xl font-semibold px-7 border-none">Donation</button></a>
+            <a  href=""><button id="showDonation" class="btn bg-lime-300 text-xl font-semibold px-7 border-none">Donation</button></a>
 
-            <a href=""><button class="btn text-xl font-semibold px-7 border-none">History</button></a>
+            <a  href=""><button id="showHistory" class="btn text-xl font-semibold px-7 border-none">History</button></a>
          </div>
     </header>
 
     <!-- Card section starts -->
     <main class="container mx-auto px-4">
-        <section class="space-y-10">
+        <section id="donation-section" class="space-y-10">
             <!-- Noakhali card -->
             <div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12 bg-white p-5 rounded-xl border-2 py-10 ">
                 <div class="w-11/12 lg:w-5/12">
@@ -106,14 +106,14 @@
                             <img src="./assets/coin.png" alt="">
                         </div>
                         <div>
-                            <h1>600 BDT</h1>
+                            <h1><span id="feni-main-balance">600</span> BDT</h1>
                         </div>
                     </div>
 
                     <h1 class="font-bold text-lg">Donate for Flood Relief in Feni,Bangladesh</h1>
                     <p class="text-gray-500">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"/> <br>
-                    <button class="btn w-full bg-lime-300 font-semibold text-xl">Donate now</button>
+                    <input id="feni-add-money-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"/> <br>
+                    <button id="feni-add-money-button" class="btn w-full bg-lime-300 font-semibold text-xl">Donate now</button>
                 </div>
 
             </div>
@@ -129,14 +129,14 @@
                             <img src="./assets/coin.png" alt="">
                         </div>
                         <div>
-                            <h1>2400 BDT</h1>
+                            <h1 ><span id="quota-balance">2400</span> BDT</h1>
                         </div>
                     </div>
 
                     <h1 class="font-bold text-lg">Aid for Injured in the Quota Movement</h1>
                     <p class="text-gray-500"> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"/> <br>
-                    <button class="btn w-full bg-lime-300 font-semibold text-xl">Donate now</button>
+                    <input id="quota-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full"/> <br>
+                    <button id="quota-button" class="btn w-full bg-lime-300 font-semibold text-xl">Donate now</button>
                 </div>
 
             </div>
@@ -144,9 +144,10 @@
         </section>
 
         <!-- History -->
-         <section class="py-10 hidden">
+         <section id="history-section" class="py-10 hidden">
             <div class="container mx-auto px-4 bg-white border-2 rounded-xl p-10">
                 <h1>hi!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, voluptate modi nesciunt consectetur impedit ducimus?</p>
 
             </div>
          </section>
@@ -162,6 +163,7 @@
     <!-- JS-code-link -->
     <script src="./Js/utlities.js"></script>
     <script src="./Js/addMoney.js"></script>
+    <script src="./Js/features.js"></script>
 
 </body>
 </html>
