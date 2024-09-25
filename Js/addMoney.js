@@ -7,15 +7,16 @@ document.getElementById('add-money-button')
     const addMoney = getInputFieldValueByID('add-money');
     const donateMoney = getTextFieldValueByID('donate-balance');
     const successModal = document.getElementById('success-modal');
-
+        
     if (addMoney > 0) {
-        newBalance = addMoney+donateMoney;
+        newBalances = addMoney+donateMoney;
+        newBalance = newBalances.toFixed(2)
         document.getElementById('donate-balance').innerText=newBalance;
 
         const totalDonateBalance = getTextFieldValueByID('main-balance');
 
         const totalBalance = totalDonateBalance-addMoney;
-        document.getElementById('main-balance').innerText=totalBalance;
+        document.getElementById('main-balance').innerText=totalBalance.toFixed(2);
         successModal.classList.remove('hidden')
         addDonationToHistoryForNoa(addMoney)
        } else{
@@ -39,13 +40,14 @@ document.getElementById('feni-add-money-button').addEventListener('click', funct
     const successModal = document.getElementById('success-modal');
 
     if (feniAddMoney > 0 ){
-        feniNewBalance = feniAddMoney + feniDonatedBalance;
-        document.getElementById('feni-main-balance').innerText=feniNewBalance;
+        feniNewBalances = feniAddMoney + feniDonatedBalance;
+        feniNewBalance = feniNewBalances.toFixed(2)
+        document.getElementById('feni-main-balance').innerText=feniNewBalance
 
         const totalBalances = getTextFieldValueByID('main-balance') 
 
         userTotalBalance = totalBalances - feniAddMoney
-        document.getElementById('main-balance').innerText=userTotalBalance
+        document.getElementById('main-balance').innerText=userTotalBalance.toFixed(2)
         successModal.classList.remove('hidden')       
         addDonationToHistoryForFeni(feniAddMoney);
     }else{
@@ -71,14 +73,15 @@ function closeModal(){
         
 
         if (quotaAddMoneyButton > 0) {
-            quotaNewBalance = quotaAddMoneyButton + quotaDonateBalance;
+            quotaNewBalances = quotaAddMoneyButton + quotaDonateBalance;
+            quotaNewBalance= quotaNewBalances.toFixed(2)
             document.getElementById('quota-balance').innerText = quotaNewBalance
             const successModal = document.getElementById('success-modal');
 
             const inTotalBalance = getTextFieldValueByID('main-balance')
 
             userInTotalBalance= inTotalBalance - quotaAddMoneyButton
-            document.getElementById('main-balance').innerText=userInTotalBalance
+            document.getElementById('main-balance').innerText=userInTotalBalance.toFixed(2)
             successModal.classList.remove('hidden')
             addDonationToHistoryForQuota(quotaAddMoneyButton);
         } else {
