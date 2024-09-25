@@ -16,21 +16,53 @@ function showSectionById (id){
     document.getElementById(id).classList.remove('hidden');
 }
 
+// Noakhali history
 
-function addDonationToHistory(amount, city) {
+function addDonationToHistoryForNoa(amount) {
     console.log(amount);
-    const historyList = document.getElementById('historyList');
-    const donationTime = document.getElementById('time');
     const listItem = document.createElement('div');
+    listItem.className= "mb-6 text-3xl font-bold"
     const timeList = document.createElement('p');
-    listItem.textContent = `${amount} Taka is Donated for famine-2024 at , Bangladesh 
-    Date : ${new Date().toLocaleString()} GMT +0600 (Bangladesh Standard Time)`;
+    timeList.className= " mb-10"
+    listItem.textContent = `${amount} Taka is Donated for famine-2024 at Noakhali, Bangladesh`;
+    timeList.textContent = `Date : ${new Date().toLocaleString()} GMT +0600 (Bangladesh Standard Time)`;
 
-    // timeList.textContent = `Date : ${new Date().toLocaleString()} GMT +0600 (Bangladesh Standard Time)`;
-    // 96500 Taka is Donated for famine-2024 at Feni, Bangladesh
-    // Donated: $${amount} 
-    // on ${new Date().toLocaleString()}
+    const historyContainer = document.getElementById('history-section')
+    historyContainer.insertBefore(timeList, historyContainer.firstChild)
+    historyContainer.insertBefore(listItem, historyContainer.firstChild)
+    
+  }
 
-    historyList.appendChild(listItem);
-    donationTime.appendChild(timeList);
+
+//   Feni history
+
+function addDonationToHistoryForFeni(amount) {
+    console.log(amount);
+    const listItem = document.createElement('div');
+    listItem.className= "mb-6 text-3xl font-bold"
+    const timeList = document.createElement('p');
+    timeList.className= " mb-10"
+    listItem.textContent = `${amount} Taka is Donated for Flood Relief in Feni,Bangladesh`;
+    timeList.textContent = `Date : ${new Date().toLocaleString()} GMT +0600 (Bangladesh Standard Time)`;
+
+    const historyContainer = document.getElementById('history-section')
+    historyContainer.insertBefore(timeList, historyContainer.firstChild)
+    historyContainer.insertBefore(listItem, historyContainer.firstChild)
+    
+  }
+
+//   quota history
+function addDonationToHistoryForQuota(amount) {
+    console.log(amount);
+    const listItem = document.createElement('div');
+    listItem.className= "mb-6 text-3xl font-bold"
+    const timeList = document.createElement('p');
+    timeList.className= " mb-10"
+    listItem.textContent = `${amount} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh`;
+    timeList.textContent = `Date : ${new Date().toLocaleString()} GMT +0600 (Bangladesh Standard Time)`;
+
+    const historyContainer = document.getElementById('history-section')
+    historyContainer.insertBefore(timeList, historyContainer.firstChild)
+    historyContainer.insertBefore(listItem, historyContainer.firstChild)
+    
   }

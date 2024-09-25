@@ -15,9 +15,9 @@ document.getElementById('add-money-button')
         const totalDonateBalance = getTextFieldValueByID('main-balance');
 
         const totalBalance = totalDonateBalance-addMoney;
-        addDonationToHistory(addMoney);
         document.getElementById('main-balance').innerText=totalBalance;
         successModal.classList.remove('hidden')
+        addDonationToHistoryForNoa(addMoney)
        } else{
 
            alert("Please Enter a Valid DONATION Amount. Thanks!");
@@ -46,7 +46,8 @@ document.getElementById('feni-add-money-button').addEventListener('click', funct
 
         userTotalBalance = totalBalances - feniAddMoney
         document.getElementById('main-balance').innerText=userTotalBalance
-        successModal.classList.remove('hidden')
+        successModal.classList.remove('hidden')       
+        addDonationToHistoryForFeni(feniAddMoney);
     }else{
 
         alert("Please Enter a Valid DONATION Amount. Thanks!");
@@ -79,6 +80,7 @@ function closeModal(){
             userInTotalBalance= inTotalBalance - quotaAddMoneyButton
             document.getElementById('main-balance').innerText=userInTotalBalance
             successModal.classList.remove('hidden')
+            addDonationToHistoryForQuota(quotaAddMoneyButton);
         } else {
 
             alert("Please Enter a Valid DONATION Amount. Thanks!");
